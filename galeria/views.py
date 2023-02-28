@@ -1,10 +1,18 @@
 from django.shortcuts import render
-# from django.http import HttpResponse
+
+          
+
 
 def index (request):
-   # return render(request, index.html)
-   # return HttpResponse('<h1>Alura Space</h1>')
-   return render(request, 'galeria/index.html')
+   
+   dados = {
+
+      1: {"Nome": "Nebulosa de Carina", "Legenda": "webbtelescope.org / NASA / James Webb"},
+      2: {"Nome": "Galaxia NGC 1079", "Legenda": "nasa.org / NASA / Hubble"}
+   
+   }
+
+   return render(request, 'galeria/index.html', {"cards": dados})
 
 def imagem (request):
    return render(request, 'galeria/imagem.html')
